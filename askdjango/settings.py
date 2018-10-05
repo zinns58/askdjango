@@ -25,7 +25,7 @@ SECRET_KEY = 'd@jovtk%9(=fyo!!5^4#61(5m60&93-2a#v3=rpz$uzqf=$dxu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
