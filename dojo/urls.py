@@ -6,4 +6,5 @@ urlpatterns = [
     path('sum/<int:x>/<int:y>/', views.mysum),
     path('sum/<int:x>/<int:y>/<int:z>/', views.mysum),
     re_path(r'^sum2/(?P<numbers>[\d/]+)/$', views.mysum2),
+    re_path(r'^hello/(?P<name>[ㄱ-힣]+)/(?P<age>\d+)$', views.hello),
 ]
