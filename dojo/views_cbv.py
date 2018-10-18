@@ -1,3 +1,5 @@
+import os
+from django.conf import settings
 from django.views.generic import View, TemplateView
 from django.http import HttpResponse, JsonResponse
 
@@ -44,7 +46,7 @@ class PostListView3(View):
 post_list3 = PostListView3.as_view()
 
 
-class ExcelDownloadView(object):
+class ExcelDownloadView(View):
     'CBV 엑셀 다운로드 응답하기'
 
     excel_path = 'other/path/excel.xls'
