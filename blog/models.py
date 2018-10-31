@@ -1,6 +1,7 @@
 # blog/models.py
 import re
 from django.conf import settings
+from django.urls import reverse
 from django.db import models
 from django.forms import ValidationError
 
@@ -37,6 +38,11 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+    # todo : 모델에 대해서 detail_view 를 만들게 되면 해당 맴버함수를 만드는 것이 코드를 줄이는데 도움이 된다.
+    def get_absolute_url(self):
+        return reverse('blog:post_detail', args=[self.id])
 
 
 class Comment(models.Model):
