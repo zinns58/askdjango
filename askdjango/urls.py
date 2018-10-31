@@ -16,11 +16,28 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import redirect
+from django.views.generic import RedirectView
+
+# def root(request):
+#     return redirect('blog:post_list')
+
 
 urlpatterns = [
+
+    # root로 이동, 방법 1
+    # path('', root),
+
+    # root로 이동, 방법 2
+    # path('', RedirectView.as_view(pattern_name='blog:post_list')),
+
+    # root로 이동, 방법3
+    path('', lambda r: redirect('blog:post_list')),
+
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('blog/', include('blog.urls')),
+    path('shop/', include('shop.urls')),
     path('dojo/', include('dojo.urls')),
 ]
 
