@@ -32,7 +32,7 @@ urlpatterns = [
     # path('', RedirectView.as_view(pattern_name='blog:post_list')),
 
     # root로 이동, 방법3
-    path('', lambda r: redirect('blog:post_list')),
+    path('', lambda r: redirect('blog:post_list'), name='root'),
 
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
