@@ -10,6 +10,15 @@ def post_new(request):
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
 
+            # 잘못된 예시
+            # todo : form.is_valid()를 통과했기때문에(값의 변경되는 경우도 있기때문) 끝까지 form.cleaned_data를 사용해야함
+            '''
+            post = Post()
+            post.title = request.POST['title']
+            post.content = request.POST['content']
+            post.save()
+            '''
+
             # 방법1
             '''
             post = Post()
