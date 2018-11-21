@@ -38,3 +38,14 @@ class CommentForm(forms.Form):
     def clean_message(self):
         return self.cleaned_data.get('message', '').strip() # 좌우 공백 제거
 '''
+
+
+'''
+언제 validators를 쓰고, 언제 clean을 쓸까요?
+-> 가급적이면 모든 validators는 모델에 정의하고, ModelForm을 통해 모델의 validators 정보도 같이 가져오세요.
+
+clean은 언쩨 쓰나요?
+1) 특정 Form에서 1회성 유효성 검사 루틴이 필요할때
+2) 다수 필드값을 묶어서, 유효성 검사가 필요할때
+3) 필드값을 변경할 필요가 있을때 : validator를 통해서는 값을 변경할수 없음(단지 값의 조건만 체크할뿐임)
+'''
