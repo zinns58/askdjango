@@ -32,7 +32,14 @@ def post_new(request):
             ])'''
 
             # 방법4
+            '''
             post = Post.object.create(**form.cleaned_data) # DB에 저장하기
+            '''
+
+            # 방법5
+            post = form.save(commit=False)  # 아래쪽에 save를 하기때문에 위에서는 form data를 post model instance에 저장해둔다.
+            post.ip = request.META['REMOTE_ADDR']
+            post.save()
 
             return redirect('/dojo') # namespace:name
         else:   # 검증에 실패하면, form.error와 form 각필드 errors 에 오류정보를 저장
