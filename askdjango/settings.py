@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'django_extensions',
     'debug_toolbar',
+    'imagekit',
     'accounts',
     'blog',
     'dojo',
