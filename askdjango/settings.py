@@ -147,4 +147,4 @@ MESSAGE_LEVEL = constants.DEBUG # 지금부터 debug 레벨의 message를 남길
 MESSAGE_TAGS = {constants.ERROR: 'danger'}
 
 
-NAVER_CLIENT_ID = 'SGQWERWGSDF'
+NAVER_CLIENT_ID = 'SGQWERWGSDF' # FIXME : 네이버에서 발급받아야 함.
