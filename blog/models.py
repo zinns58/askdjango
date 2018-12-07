@@ -4,7 +4,7 @@ from django.conf import settings
 from django.urls import reverse
 from django.db import models
 from django.forms import ValidationError
-from imagekit.models import ImageSpecField
+from imagekit.models import ProcessedImageField
 from imagekit.processors import Thumbnail
 
 
@@ -25,11 +25,11 @@ class Post(models.Model):
                              help_text='포스팅 제목을 입력해주세요. 최대 100자 내외.')
     content = models.TextField(verbose_name='내용')
 
-    photo = models.ImageField(blank=True, upload_to='blog/post/%Y/%m/%m') # 업로드 시간대별로 다른 디렉토리에 저장
-    photo_thumbnail = ImageSpecField(source='photo',
-                                     processors=[Thumbnail(300, 300)],
-                                     format='JPEG',
-                                     options={'quality': 60})
+    photo = ProcessedImageField(blank=True,
+                                       upload_to='blog/post/%Y/%m/%m',  # 업로드 시간대별로 다른 디렉토리에 저장
+                                       processors=[Thumbnail(300, 300)],
+                                       format='JPEG',
+                                       options={'quality': 60})
 
     tags = models.CharField(max_length=100, blank=True)
     lnglat = models.CharField(max_length=50, blank=True,

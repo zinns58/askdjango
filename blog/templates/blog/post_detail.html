@@ -12,8 +12,8 @@
 
                 {% if post.photo %}
                     {# <img src="/media/{{ post.photo }}" style="max-width:100%;" /> #}     {# BAD CASE #}
-                    <!--<img src="{{ post.photo.url }}" style="max-width:100%"; />              {# GOOD CASE #}-->
-                    <img src="{{ post.photo_thumbnail.url }}" style="max-width:100%"; />    {# GOOD CASE #}
+                    <img src="{{ post.photo.url }}" style="max-width:100%"; />              {# GOOD CASE #}
+                    <!--<img src="{{ post.photo_thumbnail.url }}" style="max-width:100%"; />    {# GOOD CASE #}-->
                 {% endif %}
 
                 {{ post.content|linebreaks }}
