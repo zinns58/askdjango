@@ -56,6 +56,9 @@ from .models import Post
 # CBV 샘플 STEP 4
 post_detail = DetailView.as_view(model=Post, pk_url_kwarg='id')
 
+# pk_url_kwarg='id'를 생략하려면, url.py 에서 id => pk 로 변경해야한다.
+# post_detail = DetailView.as_view(model=Post)
+
 
 def post_new(request):
     if request.method == 'POST':
