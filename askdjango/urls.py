@@ -36,10 +36,14 @@ urlpatterns = [
     path('', lambda r: redirect('blog:post_list'), name='root'),
 
     path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')),
     path('blog/', include('blog.urls')),
     path('shop/', include('shop.urls')),
     path('dojo/', include('dojo.urls')),
+
+    # django.contrib.auth 앱 내에서는 namespace를 쓰지 않는 것으로
+    # 이미 구현이 되어있기 때문에, 이를 따라 본 accounts 앱에서는
+    # namespace를 절대 적용하지 않습니다.
+    path('accounts/', include('accounts.urls')),
 ]
 
 # settings.DEBUG=False 에서는 static 함수에서 빈 리스트를 리턴
