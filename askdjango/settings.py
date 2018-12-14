@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'debug_toolbar',
     'imagekit',
+    'raven.contrib.django.raven_compat',
     'accounts',
     'blog',
     'dojo',
@@ -148,3 +149,21 @@ MESSAGE_TAGS = {constants.ERROR: 'danger'}
 
 
 NAVER_CLIENT_ID = 'SGQWERWGSDF' # FIXME : 네이버에서 발급받아야 함.
+
+
+# Error Logging : ravne
+'''
+import raven
+#ref #SentryDashboard
+GIT_ROOT = BASE_DIR # FIXME: 현 프로젝트 ROOT 지정
+if os.path.exists(os.path.join(GIT_ROOT, '.git')):
+    release = raven.fetch_git_sha(GIT_ROOT)
+else:
+    release = 'dev'
+
+
+RAVEN_CONFIG = {
+    'dsn': 'http://',
+    'release': release,
+}
+'''

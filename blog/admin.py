@@ -16,7 +16,7 @@ from .models import Post, Comment, Tag
 # 등록법 3
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'tag_list', ''content_size', 'status',
+    list_display = ['id', 'title', 'tag_list', 'content_size', 'status',
                     'created_at', 'updated_at']
 
     actions = ['make_draft', 'make_published']
