@@ -13,8 +13,8 @@ urlpatterns = [
     path('comments', views.comment_list, name='comment_list'),
 
     # cbv
-    path('cbv/', views_cbv.post_list, name="post_list"),
-    path('cbv/<int:pk>', views_cbv.post_detail, name="post_detail"),
+    path('cbv/', views_cbv.post_list),
+    path('cbv/<int:pk>', views_cbv.post_detail),
     path('cbv/new/', views_cbv.post_new),
     path('cbv/<int:pk>/edit', views_cbv.post_edit),
     path('cbv/<int:pk>/delete', views_cbv.post_delete),
