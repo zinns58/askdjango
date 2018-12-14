@@ -1,0 +1,12 @@
+{% extends "blog/layout.html" %}
+
+{% block content %}
+    <!-- blog/teamplates/blog/comment_list.html -->
+    <ul>
+        {% for comment in comment_list %}
+            <li>
+                {{ comment }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

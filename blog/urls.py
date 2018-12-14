@@ -10,6 +10,7 @@ urlpatterns = [
     path('<int:id>', views.post_detail, name="post_detail"),
     path('new', views.post_new, name="post_new"),
     path('<int:id>/edit', views.post_edit, name="post_edit"),
+    path('comments', views.comment_list, name='comment_list'),
 
     # cbv
     path('cbv/', views_cbv.post_list, name="post_list"),
